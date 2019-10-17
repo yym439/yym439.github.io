@@ -66,7 +66,7 @@ gitalk:
   repo: yym439.github.io    #仓库名称
   owner: yym439    # github用户名
   admin: yym439
-  distractionFreeMode: true # 是否启用类似FB的阴影遮罩
+  distractionFreeMode: false # 是否启用类似FB的阴影遮罩
 
 
 # 统计
@@ -91,17 +91,11 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "GitHub·RainbomSea",
-        href: "http://RainbomSea.github.io"
+        title: "GitHub·yym439",
+        href: "http://yym439.github.io"
     },{
-        title: "CSDN·RainbomSea",
-        href: "https://blog.csdn.net/qq_39268193"
-    },{
-        title: "知乎·RainbomSea",
-        href: "https://www.zhihu.com/people/RainbomSea"
-    },{
-        title: "GitBook·RainbomSea",
-        href: "https://legacy.gitbook.com/@rainbomsea"
+        title: "CSDN·yym439",
+        href: "https://blog.csdn.net/u012968101"
     }
 ]
 
