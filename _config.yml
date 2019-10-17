@@ -22,8 +22,8 @@ sidebar-avatar: /img/head.jpg      # 头像
 # SNS settings | 社交网络设置
 facebook_username: #
 github_username: yym439
-zhihu_username: yym439
-csdn_username: yym439
+zhihu_username: #
+csdn_username: u012968101
 
 
 
@@ -61,11 +61,11 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    # 是否开启Gitalk评论
-  clientID: 99ecf1fdc9b7e357ebb7                            #生成的clientID
-  clientSecret: a866f00709e418ffd35d9986e130ff7f01a3cba2    #生成的clientSecret
-  repo: RainbomSea.github.io    #仓库名称
-  owner: RainbomSea    # github用户名
-  admin: RainbomSea
+  clientID: 40a8a9da4bd271580ef7                            #生成的clientID
+  clientSecret: 1ff40ccb92d22b2566a384e9d5db2dad6df93f6a    #生成的clientSecret
+  repo: yym439.github.io    #仓库名称
+  owner: yym439    # github用户名
+  admin: yym439
   distractionFreeMode: true # 是否启用类似FB的阴影遮罩
 
 
