@@ -42,7 +42,7 @@ Regeneration: true    # 允许文件修改时自动重新生成网站。
 
 
 
-# Gems
+# Gems 静态模板使用的是Jekyll
 # from PR#40, to support local preview for Jekyll 3.0
 plugins: [jekyll-paginate]
 
