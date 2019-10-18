@@ -18,7 +18,7 @@ description: "相信奇迹的人,本身就是奇迹。"
 			{{ post.content | strip_html | truncate:200 }}
 		</div>
 	</a>
-	<p class="post-meta">
+	<p class="post-meta" style="display: flex;">
 		<!-- 时间格式%B %-d, %Y -->
 		作者: {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %}   时间: {{ post.date | date: " %Y-%m-%d"}}
 
