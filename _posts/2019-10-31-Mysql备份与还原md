@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Mysql热备份
-subtitle:   Docker下热备份Mysql
+title:      Mysql备份与还原
+subtitle:   Docker下Mysql的热备份、冷还原
 date:       2019-10-31
 author:     yym439
 header-img: img/post-web.jpg
