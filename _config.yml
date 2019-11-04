@@ -92,7 +92,7 @@ service-worker: true
 friends: [
     {
         title: "GitHub·yym439",
-        href: "http://yym439.github.io"
+        href: "https://github.com/yym439"
     },{
         title: "CSDN·yym439",
         href: "https://blog.csdn.net/u012968101"
