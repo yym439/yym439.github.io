@@ -8,7 +8,6 @@ header-img: img/post-web.jpg
 catalog: true
 tags:
     - 机器学习
-    - 谷歌机器学习快速课程
 ---
 
 > 仓库代码: [Tensorflow Hello World](https://github.com/RainbomSea/Jupyter-Notebook/blob/master/谷歌机器学习速成课程/Tensorflow%20%20Hello%20World.ipynb)
