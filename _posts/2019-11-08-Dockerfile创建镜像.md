@@ -135,3 +135,12 @@ EXPOSE 22
 #设置自启动命令
 CMD  ["/ run.sh"]
 ```
+
+创建镜像
+
+> docker build -t sshd:dockerfile .
+
+
+运行容器：
+
+> docker run -d -p 10022:22 sshd
