@@ -99,7 +99,6 @@ cat -/  ssh/id rsa.pub >authorized_keys
 
 编写dockerfile：
 ```dockerfile
-
 #设置继承镜像
 FROM  ubuntu:18.04
 #提供一些作者的信息
@@ -119,8 +118,8 @@ RUN apt-get update
 
 #安装ssh 服务
 RUN apt-get install -y openssh-server
-RUN mkdir -p  /var/ run/ sshd
-RUN mkdir -p / root/ .ssh
+RUN mkdir -p  /var/run/sshd
+RUN mkdir -p /root/.ssh
 
 #取消pam限制
 RUN sed -ri  's/session  required  pam_loginuid.so/#session required pam_loginuid.so/g' /etc/pam.d/sshd
@@ -133,7 +132,7 @@ RUN chmod 755 /run.sh
 #开放端口
 EXPOSE 22
 #设置自启动命令
-CMD  ["/ run.sh"]
+CMD  ["/run.sh"]
 ```
 
 创建镜像
