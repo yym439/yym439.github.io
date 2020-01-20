@@ -4,7 +4,7 @@ title:      SpringBoot整合Redis
 subtitle:   Redis安装部署、SpringBoot整合
 date:       2020-01-19
 author:     yym439
-header-img: img/post-bg-keybord.jpg
+header-img: img/post-bg-debug.png
 catalog: true
 tags:
     - springboot 
