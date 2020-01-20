@@ -7,7 +7,7 @@ author:     yym439
 header-img: img/post-bg-keybord.jpg
 catalog: true
 tags:
-    - SpringBoot 
+    - springboot 
 ---
 
 ## 1. Dockert安装部署Redis
