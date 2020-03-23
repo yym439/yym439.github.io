@@ -45,7 +45,8 @@ cmake­-gui
 
 3.点击configure之后,会跳出CmakeSetup窗口,选择Unix MakeFiles + Use default native compliers
 
-4.configure一次之后,窗口中会出现cmake选项,选择我们需要的模块,去掉不需要的模块,并填入需要被动态库调取时使用的静态库编译选项,可以大大缩短编译时间并解决动态库调用opencv静态库之后再由第三方调用动态库时找不到opencv库函数的问题
+4.configure一次之后,窗口中会出现cmake选项,
+选择我们需要的模块,去掉不需要的模块,动态库调用opencv静态库之后(动态库即包含了opencv的库功能)
 
 5.点击configure,把出现红框的选项勾去除
 
@@ -61,7 +62,7 @@ cmake­-gui
 
 ```
 
-### 2.2 linux调用opencv静态库编程
+### 2.2 linux编写动态库调用opencv静态库编程
 
 
 
