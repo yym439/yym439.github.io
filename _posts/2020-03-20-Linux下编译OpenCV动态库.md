@@ -58,13 +58,52 @@ cmake­-gui
   opencv库位置: /home/yym/opencv-3.4.9/release/lib
   头文件位置: /home/yym/opencv-3.4.9/include
 
-9.编译通过后,使用sudo make install直接安装,也可以直接获取静态库文件和头文件进行调用
+9.编译通过后,建议使用sudo make install直接安装,也可以直接获取静态库文件和头文件进行调用
 
 ```
 
 ### 2.2 linux编写动态库调用opencv静态库编程
 
+[linux更新libstdc++.so.6方法](https://www.jianshu.com/p/ef510e0def25)
 
+#### 2.2.1 编写CMakeLists.txt
+
+```
+# cmake needs this line 要求的最低版本
+cmake_minimum_required(VERSION 2.8)
+
+# Define project name 定义工程名
+project(example_project)
+
+# Find OpenCV, you may need to set OpenCV_DIR variable
+# to the absolute path to the directory containing OpenCVConfig.cmake file
+# via the command line or GUI 自动查找库
+find_package(OpenCV REQUIRED)
+
+# If the package has been found, several variables will
+# be set, you can find the full list with descriptions
+# in the OpenCVConfig.cmake file.
+# Print some message showing some of them
+message(STATUS "OpenCV library status:")
+message(STATUS "    version: ${OpenCV_VERSION}")
+message(STATUS "    libraries: ${OpenCV_LIBS}")
+message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
+
+# Declare the executable target built from your sources 声明可执行目标文件及源文件
+#add_executable(read read.cpp)	# 目标文件，源文件0,源文件1,...
+ADD_LIBRARY (img_proc SHARED img_proc.cpp)
+#ADD_LIBRARY (img_proc STATIC img_proc.cpp)
+# Link your application with OpenCV libraries 将目标文件与库链接
+target_link_libraries(img_proc ${OpenCV_LIBS})	# 目标文件，库路径
+
+```
+#### 2.2.2 编译动态库链接opencv静态库
+
+```
+执行：
+cmake .
+make
+```
 
 ## 3. OpenCV库模块说明
 
