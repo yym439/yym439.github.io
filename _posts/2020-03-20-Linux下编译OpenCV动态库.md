@@ -7,7 +7,8 @@ author:     yym439
 header-img: img/post-bg-e2e-ux.jpg
 catalog: true
 tags:
-    - Linux OpenCV
+    - Linux 
+    - OpenCV
 ---
 
 ## 1. 编译工具安装
