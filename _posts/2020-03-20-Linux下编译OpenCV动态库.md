@@ -76,6 +76,8 @@ cmake_minimum_required(VERSION 2.8)
 # Define project name 定义工程名
 project(example_project)
 
+link_directories(".")
+
 # Find OpenCV, you may need to set OpenCV_DIR variable
 # to the absolute path to the directory containing OpenCVConfig.cmake file
 # via the command line or GUI 自动查找库
@@ -92,10 +94,10 @@ message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 
 # Declare the executable target built from your sources 声明可执行目标文件及源文件
 #add_executable(read read.cpp)	# 目标文件，源文件0,源文件1,...
-ADD_LIBRARY (img_proc SHARED img_proc.cpp)
+ADD_LIBRARY (startprint SHARED img_proc.cpp StartUsbPrint.c StartZPLPrintApi.c)
 #ADD_LIBRARY (img_proc STATIC img_proc.cpp)
 # Link your application with OpenCV libraries 将目标文件与库链接
-target_link_libraries(img_proc ${OpenCV_LIBS})	# 目标文件，库路径
+target_link_libraries(startprint ${OpenCV_LIBS} libusb-1.0.so)	# 目标文件，库路径
 
 ```
 #### 2.2.2 编译动态库链接opencv静态库
