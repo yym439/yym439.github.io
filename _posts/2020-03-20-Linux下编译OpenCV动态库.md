@@ -75,7 +75,7 @@ cmake_minimum_required(VERSION 2.8)
 
 # Define project name 定义工程名
 project(example_project)
-
+#需要链接的库文件目录
 link_directories(".")
 
 # Find OpenCV, you may need to set OpenCV_DIR variable
