@@ -65,7 +65,7 @@ cmake­-gui
 
 ### 2.2 linux编写动态库调用opencv静态库编程
 
-[linux更新libstdc++.so.6方法](https://www.jianshu.com/p/ef510e0def25)
+[linux更新libstdc++.so.6方法](https://www.jianshu.com/p/ef510e0def25) 或者拷贝libstdc++.so.6.0.21 到对应路径 执行ldconfig
 
 #### 2.2.1 编写CMakeLists.txt
 
