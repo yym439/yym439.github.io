@@ -18,8 +18,9 @@ tags:
 [官网下载地址](https://cmake.org/download/)
 
 [其他下载地址](https://cmake.org/files/v3.17/)
+
+- 官网直接下载已经编译过的二进制cmake版本(注意支持的架构平台):
 ```
-官网直接下载已经编译过的二进制cmake版本:
 
 1.解压： tar -zxvf cmake-3.17.0-rc3-Linux-x86_64\ \(1\).tar.gz
 
@@ -29,6 +30,19 @@ export PATH=$PATH:/home/yym/cmake-3.17.0-rc3-Linux-x86_64/bin
 
 3. 打开cmake界面
 cmake­-gui
+
+```
+
+- 官网下载cmake源码进行编译:
+
+```
+1. 解压: tar -xzf cmake-3.17.0-rc3.tar.gz
+
+2. 进入解压的目录，执行： ./bootstrap
+
+3. make install
+
+4. cmake --version
 ```
 
 
