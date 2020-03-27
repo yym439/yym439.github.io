@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Linux下安装编译OpenCV动态库
-subtitle:   Linux下编译安装OpenCV动态库
+title:      Linux下安装编译OpenCV库
+subtitle:   Linux下编译安装OpenCV库
 date:       2020-03-20
 author:     yym439
 header-img: img/post-bg-e2e-ux.jpg
@@ -63,7 +63,7 @@ cmake­-gui
 
 ```
 
-### 2.2 linux编写动态库调用opencv静态库编程
+### 2.2 linux编写动态库调用opencv静态库
 
 #### 2.2.1 编写CMakeLists.txt
 
