@@ -34,7 +34,7 @@ cmake­-gui
 
 ## 2. 下载OpenCV源码
 
-[官网](https://opencv.org/)
+进入[官网](https://opencv.org/),选择Release->Source 下载
 
 ### 2.1  cmake静态编译OpenCV
 
