@@ -65,8 +65,6 @@ cmake­-gui
 
 ### 2.2 linux编写动态库调用opencv静态库编程
 
-[linux更新libstdc++.so.6方法](https://www.jianshu.com/p/ef510e0def25) 或者拷贝libstdc++.so.6.0.21 到对应路径 执行ldconfig
-
 #### 2.2.1 编写CMakeLists.txt
 
 ```
@@ -107,6 +105,11 @@ target_link_libraries(startprint ${OpenCV_LIBS} libusb-1.0.so)	# 目标文件，
 cmake .
 make
 ```
+
+注意：OpenCV编译需要依赖libstdc++.so库，编译的gcc版本不一致导致stdc++库版本不一致，程序不能运行，解决方案：
+- 拷贝相应版本的libstdc++.so.6.0.21 到对应系统路径 执行ldconfig；[linux更新libstdc++.so.6方法](https://www.jianshu.com/p/ef510e0def25) 
+
+- 把编译的gcc5的libstdc++.a静态连接到自己的动态库（建议这样做，缺点：动态库变大）
 
 ## 3. OpenCV库模块说明
 
