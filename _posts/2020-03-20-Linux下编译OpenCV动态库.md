@@ -20,8 +20,8 @@ tags:
 [其他下载地址](https://cmake.org/files/v3.17/)
 
 - 官网直接下载已经编译过的二进制cmake版本(注意支持的架构平台):
-```
 
+```
 1.解压： tar -zxvf cmake-3.17.0-rc3-Linux-x86_64\ \(1\).tar.gz
 
 2.添加全局环境变量(添加完打开新的终端才会生效)：
@@ -30,7 +30,6 @@ export PATH=$PATH:/home/yym/cmake-3.17.0-rc3-Linux-x86_64/bin
 
 3. 打开cmake界面
 cmake­-gui
-
 ```
 
 - 官网下载cmake源码进行编译:
@@ -43,6 +42,7 @@ cmake­-gui
 3. make install
 
 4. cmake --version
+
 ```
 
 
