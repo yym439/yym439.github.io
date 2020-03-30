@@ -56,16 +56,14 @@ cmake­-gui
 1. 解压Opencv ,在解压的目录下新建Release文件夹,进入文件夹中
 
 2.右键终端打开:cmake-­gui选择源码路径为Opencv解压出的文件夹,build路径为创建好的Release,勾上Advanced选项,点击configure.
-注意：编译静态库需要把BUILD_SHARED_LIBS选项勾去除
 
 3.点击configure之后,会跳出CmakeSetup窗口,选择Unix MakeFiles + Use default native compliers
+注意：编译静态库需要把BUILD_SHARED_LIBS选项勾去除
 
 4.configure一次之后,窗口中会出现cmake选项,
 选择我们需要的模块,去掉不需要的模块,动态库调用opencv静态库之后(动态库即包含了opencv的库功能)
 
-5.点击configure,把出现红框的选项勾去除
-
-6.再点击configure,生成完毕后再点击Generate,提示:Generating Done之后即可关闭cmake­-gui
+6.生成完毕后再点击Generate,提示:Generating Done之后即可关闭cmake­-gui
 
 7.进入Release目录内,右键打开终端,输入指令make回车,即开始编译,
 
