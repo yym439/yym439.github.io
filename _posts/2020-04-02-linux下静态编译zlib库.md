@@ -25,5 +25,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 （relocation R_X86_64_32 against）。
 
 3. cmake .
+
 4. make install
 ```
