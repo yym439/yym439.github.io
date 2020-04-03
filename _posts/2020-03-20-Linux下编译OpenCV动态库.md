@@ -61,7 +61,7 @@ cmake­-gui
 注意：编译静态库需要把BUILD_SHARED_LIBS选项勾去除;CMKAE_C_FLAGS添加-fPIC
 
 4.configure一次之后,窗口中会出现cmake选项,
-选择我们需要的模块,去掉不需要的模块,动态库调用opencv静态库之后(动态库即包含了opencv的库功能)
+选择我们需要的模块(png、jpeg、zlib),动态库调用opencv静态库之后(动态库即包含了opencv的库功能)
 
 6.生成完毕后再点击Generate,提示:Generating Done之后即可关闭cmake­-gui
 
