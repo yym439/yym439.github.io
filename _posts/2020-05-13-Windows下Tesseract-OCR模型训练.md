@@ -10,7 +10,9 @@ tags:
     - OCR
 ---
 ## 一、工具下载
-[参考博客](https://blog.csdn.net/ruyulin/article/details/89046148)
+[V3.05参考博客](https://blog.csdn.net/ruyulin/article/details/89046148)
+
+[V4.10参考博客](https://zhuanlan.zhihu.com/p/77013854)
 
 ## 二、数据采集，手动矫正
 
