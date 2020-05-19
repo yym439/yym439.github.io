@@ -73,5 +73,82 @@ tags:
 ```
 
 
+## 五、Windows下编译Tesseract 3.05
 
+[参考博客V3.05](https://www.polarxiong.com/archives/Tesseract-3-05%E5%8F%8A%E4%B9%8B%E5%90%8E%E7%89%88%E6%9C%AC%E7%BC%96%E8%AF%91%E7%94%9F%E6%88%90%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93DLL.html)
+[参考博客V5.0](https://zhuanlan.zhihu.com/p/75737812)
 
+### 5.1 源码编译库
+```
+动态库编译：
+1. 下载安装cmake
+2. 下载cppan
+3. cmake编译：
+    cd tesseract
+    cppan  （下载编译依赖）
+    mkdir build
+    cd build
+    cmake .. (或者使用cmake-gui进行编译)
+4. 打开build文件夹，打开.sln工程，INSTALL安装编译生成库及应用程序
+
+静态库编译：
+1.修改libtesseract库工程配置：
+	配置属性-常规-配置类型（静态库）
+	配置属性-高级-目标文件拓展名（.lib）
+	配置属性-C/C++-代码生成器-运行库（MT）
+
+注：MT表示静态库；MD表示动态库; MT/MD多个d表示调试模式
+	
+```
+
+### 5.2 VC工程引用第三方库
+
+```
+动态库工程配置：
+    1.属性-VC++目录-包含目录（添加头文件目录）-库目录（动态库的lib文件目录，隐式调用）
+    2.链接器-输入-附加依赖项（动态库的lib文件名称）
+
+静态库工程配置：
+	1.属性-VC++目录-包含目录（添加头文件目录）
+	2.链接器-常规-附加库目录（静态库lib文件目录）
+	3.链接器-输入-附加依赖项（静态库的lib文件名称）
+```
+
+调用示例：
+```
+#include <iostream>
+#include <memory>
+#include <allheaders.h> // leptonica main header for image io
+#include <baseapi.h>
+
+int main(int argc, char* argv[])
+{
+	tesseract::TessBaseAPI tess;
+	//if (tess.Init("E:/OpenCV_DNN数据集/tessdata", "eng"))
+	if (tess.Init("C:\\Program Files (x86)\\tesseract\\tessdata", "num"))
+
+	{
+		std::cout << "OCRTesseract: Could not initialize tesseract." << std::endl;
+		return 1;
+	}
+	// setup
+	tess.SetPageSegMode(tesseract::PageSegMode::PSM_AUTO);
+	tess.SetVariable("save_best_choices", "T");
+	// read image
+	auto pixs = pixRead("4.png");
+	if (!pixs)
+	{
+		std::cout << "Cannot open input file: " << argv[1] << std::endl;
+		return 1;
+	}
+	// recognize
+	tess.SetImage(pixs);
+	tess.Recognize(0);
+	// get result and delete[] returned char* string
+	std::cout << std::unique_ptr<char[]>(tess.GetUTF8Text()).get() << std::endl;
+	// cleanup
+	tess.Clear();
+	pixDestroy(&pixs);
+	return 0;
+}
+```
