@@ -72,6 +72,9 @@ tags:
     tesseract 1.png result -l num
 ```
 
+>注意：
+生成box文件时报错empty page：[解决](https://blog.csdn.net/fire669842703/article/details/103009578)
+
 
 ## 五、Windows下编译Tesseract 3.05
 
