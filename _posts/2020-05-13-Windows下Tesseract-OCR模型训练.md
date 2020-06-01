@@ -79,7 +79,10 @@ tags:
 ## 五、Windows下编译Tesseract 3.05
 
 [参考博客V3.05](https://www.polarxiong.com/archives/Tesseract-3-05%E5%8F%8A%E4%B9%8B%E5%90%8E%E7%89%88%E6%9C%AC%E7%BC%96%E8%AF%91%E7%94%9F%E6%88%90%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93DLL.html)
+
 [参考博客V5.0](https://zhuanlan.zhihu.com/p/75737812)
+
+[Windows下静态编译 Tessearct3.05](https://github.com/yym439/Tesseract-OCR_for_Windows)
 
 ### 5.1 源码编译库
 ```
