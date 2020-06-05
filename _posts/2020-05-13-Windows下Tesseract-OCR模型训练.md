@@ -9,13 +9,21 @@ catalog: true
 tags:
     - OCR
 ---
-## 一、工具下载
+## 1、工具下载
 [V3.05参考博客1](https://blog.csdn.net/ruyulin/article/details/89046148)
 [V3.05参考博客2](https://www.cnblogs.com/xpwi/p/9604567.html)
 
 [V4.10参考博客](https://zhuanlan.zhihu.com/p/77013854)
 
-## 二、数据采集，手动矫正
+### 1.1 预备知识
+在开始准备用于训练的图片之前，建议先看看官方Wiki的[ImproveQuality](https://tesseract-ocr.github.io/tessdoc/ImproveQuality)提高图像质量的说明，重要几点是：
+- Tesseract在DPI为至少为300 DPI的图像上效果最佳，所以需要考虑提高图片的DPI，一般图片默认的都是72 。
+- 将图像转换为黑白（就是二值化）。
+- 消除噪点（就是降低干扰）。
+- 旋转（就是将文字尽量水平）。
+- 移除不必要的边界（就是要适当裁剪图片）。
+
+## 2、数据采集，手动矫正
 
 ```
  1.生成tif文件：
@@ -32,7 +40,7 @@ tags:
     tesseract num.font.exp1.tif num.font.exp1 nobatch box.train
 ```
 
-## 三 、生成训练模型数据
+## 3 、生成训练模型数据
 
 ```
 1. 新建字体特征文件
@@ -62,7 +70,7 @@ tags:
 ```
 
 
-## 四、测试
+## 4、测试
 
 ```
 1. 将num.traineddata文件拷贝到C:\Program Files (x86)\Tesseract-OCR\tessdata目录下，
@@ -76,7 +84,7 @@ tags:
 生成box文件时报错empty page：[解决](https://blog.csdn.net/fire669842703/article/details/103009578)
 
 
-## 五、Windows下编译Tesseract 3.05
+## 5、Windows下编译Tesseract 3.05
 
 [参考博客V3.05](https://www.polarxiong.com/archives/Tesseract-3-05%E5%8F%8A%E4%B9%8B%E5%90%8E%E7%89%88%E6%9C%AC%E7%BC%96%E8%AF%91%E7%94%9F%E6%88%90%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93DLL.html)
 
