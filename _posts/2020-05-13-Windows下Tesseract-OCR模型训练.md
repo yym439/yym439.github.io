@@ -26,6 +26,8 @@ tags:
 
 ## 2、数据采集，手动矫正
 
+[训练官网](https://tesseract-ocr.github.io/tessdoc/Training-Tesseract-3.03%E2%80%933.05)
+
 ```
  1.生成tif文件：
     打开jTessBoxEditor工具后，点击Tools，点Merge TIFF，
