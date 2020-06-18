@@ -9,12 +9,17 @@ catalog: true
 tags:
     - OCR
 ---
-## 1、工具下载
+## 1、参考资料
 [V3.05参考博客1](https://blog.csdn.net/ruyulin/article/details/89046148)
 
 [V3.05参考博客2](https://www.cnblogs.com/xpwi/p/9604567.html)
 
 [V4.10参考博客](https://zhuanlan.zhihu.com/p/77013854)
+
+[Tesseract-OCR 4.0LSTM训练流程](https://zhuanlan.zhihu.com/p/77013854)
+
+[合并字库](https://www.cnblogs.com/yanjj/p/7998980.html)
+
 
 ### 1.1 预备知识
 在开始准备用于训练的图片之前，建议先看看官方Wiki的[ImproveQuality](https://tesseract-ocr.github.io/tessdoc/ImproveQuality)提高图像质量的说明，重要几点是：
@@ -85,7 +90,12 @@ tags:
 
 >注意：
 生成box文件时报错empty page：[解决](https://blog.csdn.net/fire669842703/article/details/103009578)
-[合并字库](https://www.cnblogs.com/yanjj/p/7998980.html)
+> 利用text2image生成.tif和.box文件:
+```
+text2image --text="D:\new_05\text.txt" --outputbase="D:\new_05\zth.font.exp0" --fontconfig_tmpdir="%temp%"
+ --font="HGMaruGothicMPRO" --fonts_dir="D:\new_05\font"
+```
+
 
 
 ## 5、Windows下编译Tesseract 3.05
