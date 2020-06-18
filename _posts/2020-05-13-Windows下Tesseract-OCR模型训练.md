@@ -90,7 +90,9 @@ tags:
 
 >注意：
 生成box文件时报错empty page：[解决](https://blog.csdn.net/fire669842703/article/details/103009578)
+
 > 利用text2image生成.tif和.box文件:
+
 ```
 text2image --text="D:\new_05\text.txt" --outputbase="D:\new_05\zth.font.exp0" --fontconfig_tmpdir="%temp%"
  --font="HGMaruGothicMPRO" --fonts_dir="D:\new_05\font"
