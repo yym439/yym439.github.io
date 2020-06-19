@@ -94,8 +94,7 @@ tags:
 > 利用text2image生成.tif和.box文件:
 
 ```
-text2image --text="D:\new_05\text.txt" --outputbase="D:\new_05\zth.font.exp0" --fontconfig_tmpdir="%temp%"
- --font="HGMaruGothicMPRO" --fonts_dir="D:\new_05\font"
+text2image --text=0178232308.txt --outputbase="zth.font.exp0" --fontconfig_tmpdir="%temp%"_tmpdir="%temp%"   --font="arial" --fonts_dir="C:\Windows\Fonts"
 ```
 
 
