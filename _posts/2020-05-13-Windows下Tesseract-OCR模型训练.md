@@ -94,7 +94,11 @@ tags:
 > 利用text2image生成.tif和.box文件:
 
 ```
-text2image --text=0178232308.txt --outputbase="zth.font.exp0" --fontconfig_tmpdir="%temp%"_tmpdir="%temp%"   --font="arial" --fonts_dir="C:\Windows\Fonts"
+文字转相应字体图片:
+text2image --text=0178232308.txt --outputbase="zth.font.exp0" --fontconfig_tmpdir="%temp%"   --font="arial" --fonts_dir="C:\Windows\Fonts"
+
+查找可用字体列表:
+text2image --list_available_fonts  --fontconfig_tmpdir="%temp%"  --fonts_dir=C:/windows/fonts
 ```
 
 
