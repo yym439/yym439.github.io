@@ -130,3 +130,16 @@ tags:
 1. [add to jcenter失败](https://www.jianshu.com/p/44f3c333ce3c)：Failed to send a message: The version control 1.0.0 returns 404
     
     >修改库的VCS，为自己github创建的工程地址
+
+2. add to jcenter审核通过前，可以通过配置自己私有仓地址（jcenter仓库右上角复制地址）
+    ```
+    allprojects {
+        repositories {
+            jcenter()
+            google()
+            maven {
+                url('https://dl.bintray.com/yym439/jcenterDemo')
+            }
+        }
+    }
+    ```
