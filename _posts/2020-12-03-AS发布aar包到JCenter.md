@@ -25,7 +25,7 @@ tags:
     - Type选择：Maven
 3. 进入Repository，创建Package
     - Name：要和配置文件中，上传的项目名一致
-    - Version control: 1.0.0
+    - Version control: https://dl.bintray.com/yym439/jcenterDemo
 
 #### AS配置
 
@@ -123,3 +123,10 @@ tags:
     gradlew :mylibrry:bintrayUpload
     ```
 2. 上传成功后，进入JCenter仓库，Linked to - Add to JCenter 
+
+
+### 三、常见问题
+
+1. [add to jcenter失败](https://www.jianshu.com/p/44f3c333ce3c)：Failed to send a message: The version control 1.0.0 returns 404
+    
+    >修改库的VCS，为自己jcenter创建的maven仓库地址，jcenter右上角直接复制
