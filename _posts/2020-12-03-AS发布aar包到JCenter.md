@@ -25,7 +25,7 @@ tags:
     - Type选择：Maven
 3. 进入Repository，创建Package
     - Name：要和配置文件中，上传的项目名一致
-    - Version control: https://dl.bintray.com/yym439/jcenterDemo
+    - Version control: https://github.com/yym439/mylibrary.git
 
 #### AS配置
 
@@ -129,4 +129,4 @@ tags:
 
 1. [add to jcenter失败](https://www.jianshu.com/p/44f3c333ce3c)：Failed to send a message: The version control 1.0.0 returns 404
     
-    >修改库的VCS，为自己jcenter创建的maven仓库地址，jcenter右上角直接复制
+    >修改库的VCS，为自己github创建的工程地址
