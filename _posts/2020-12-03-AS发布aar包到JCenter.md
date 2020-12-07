@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      AS发布aar包到JCenter
-subtitle:   AS发布aar包到JCenter
+subtitle:   使用gradle-bintray-plugin发布aar包到JCenter
 date:       2020-12-03
 author:     yym439
 header-img: img/post-bg-github-cup.jpg
@@ -143,3 +143,4 @@ tags:
         }
     }
     ```
+3. [参考博客](https://www.cnblogs.com/baiqiantao/p/10344393.html)
