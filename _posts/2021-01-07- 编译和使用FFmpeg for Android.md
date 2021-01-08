@@ -99,7 +99,7 @@ build
 - [参考博客](https://www.jianshu.com/p/df9401e6fba5?utm_campaign=haruki&utm_content=note&utm_medium=seo_notes&utm_source=recommendation)
 
 
-### 一、Android中使用FFmpeg
+### 二、Android中使用FFmpeg
 
 #### 1. 创建Native C++工程
 
