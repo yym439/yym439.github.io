@@ -95,3 +95,133 @@ build
     - libavcodec/opus_pvq.c 修改B0为b0
 
 6. [参考博客](https://www.jianshu.com/p/df9401e6fba5?utm_campaign=haruki&utm_content=note&utm_medium=seo_notes&utm_source=recommendation)
+
+
+### 一、Android中使用FFmpeg
+
+#### 1. 创建Native C++工程
+
+- 拷贝include文件夹到cpp中
+- 拷贝so库到src\main\jniLibs中
+
+#### 2.编写CMakeLists.txt,链接第三方so库
+```
+cmake_minimum_required(VERSION 3.10.2)
+
+#设置第三方库头文件路径,需要设置，不然导入头文件会找不到
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+# 设置第三方库路径,不要使用相对路径(导入第三方库会找不到)
+set(DIR ${CMAKE_SOURCE_DIR}/../jniLibs)
+
+#设置工程名称
+project("avplayer")
+
+#打印变量信息：在Gradle-app-buil-run中编译(在Run中查看日志)
+message("yym: ${DIR}")
+
+#导入第三方库
+add_library(avcodec-57
+        SHARED
+        IMPORTED)
+set_target_properties(avcodec-57
+        PROPERTIES IMPORTED_LOCATION
+        ${DIR}/${ANDROID_ABI}/libavcodec-57.so)
+
+add_library(avdevice-57
+        SHARED
+        IMPORTED)
+set_target_properties(avdevice-57
+        PROPERTIES IMPORTED_LOCATION
+        ${DIR}/armeabi-v7a/libavdevice-57.so)
+
+add_library(avformat-57
+        SHARED
+        IMPORTED)
+set_target_properties(avformat-57
+        PROPERTIES IMPORTED_LOCATION
+        ${DIR}/armeabi-v7a/libavformat-57.so)
+
+add_library(avutil-55
+        SHARED
+        IMPORTED)
+set_target_properties(avutil-55
+        PROPERTIES IMPORTED_LOCATION
+        ${DIR}/armeabi-v7a/libavutil-55.so)
+
+add_library(postproc-54
+        SHARED
+        IMPORTED)
+set_target_properties(postproc-54
+        PROPERTIES IMPORTED_LOCATION
+        ${DIR}/armeabi-v7a/libpostproc-54.so)
+
+add_library(swresample-2
+        SHARED
+        IMPORTED)
+set_target_properties(swresample-2
+        PROPERTIES IMPORTED_LOCATION
+        ${DIR}/armeabi-v7a/libswresample-2.so)
+
+add_library(swscale-4
+        SHARED
+        IMPORTED)
+set_target_properties(swscale-4
+        PROPERTIES IMPORTED_LOCATION
+        ${DIR}/armeabi-v7a/libswscale-4.so)
+
+add_library(avfilter-6
+        SHARED
+        IMPORTED)
+set_target_properties(avfilter-6
+        PROPERTIES IMPORTED_LOCATION
+        ${DIR}/armeabi-v7a/libavfilter-6.so)
+
+# 创建动态库
+add_library(
+            native-lib
+            SHARED
+
+            mylog.c
+            native-lib.cpp )
+
+#搜素系统库到指定变量
+find_library( 
+              log-lib
+              log )
+
+#链接需要的第三方动态库
+target_link_libraries(
+                        native-lib
+                        avfilter-6
+                        avcodec-57
+                        avdevice-57
+                        avformat-57
+                        avutil-55
+                        postproc-54
+                        swresample-2
+                        swscale-4
+                        ${log-lib} )
+```
+
+
+#### 3.修改app build.gradle配置文件
+
+```
+android {
+    defaultConfig {
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+    sourceSets.main {
+        jniLibs.srcDirs = ['jniLibs']
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.10.2"
+        }
+    }
+}
+```
