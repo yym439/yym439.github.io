@@ -13,11 +13,11 @@ tags:
 
 ### 一、 Linux下编译FFmpeg for Android
 
-1. [下载NDK-r15 for linux](https://blog.csdn.net/gyh198/article/details/75036686)
+#### 1. [下载NDK-r15 for linux](https://blog.csdn.net/gyh198/article/details/75036686)
 
-2. [FFmpeg3.4.8源码下载](http://ffmpeg.org/download.html)
+#### 2. [FFmpeg3.4.8源码下载](http://ffmpeg.org/download.html)
 
-3. 修改configure文件
+#### 3. 修改configure文件
 
 ```
 SLIBNAME_WITH_MAJOR='$(SLIBNAME).$(LIBMAJOR)'
@@ -31,7 +31,7 @@ SLIB_INSTALL_NAME='$(SLIBNAME_WITH_MAJOR)'
 SLIB_INSTALL_LINKS='$(SLIBNAME)'
 ```
 
-4. 在ffmpeg根目录下新建androidBuilder.sh脚本：
+#### 4. 在ffmpeg根目录下新建androidBuilder.sh脚本：
 
 ```
 #!/bin/bash
@@ -84,17 +84,19 @@ SYSROOT=$NDK_HOME/platforms/$PLATFORM_VERSION/arch-$ARCH/
 build
 ```
 
-4. 运行编译：./androidBuilder.sh
-    armeabi-v7a目录下的include和lib就是我们引入Android需要使用的头文件和动态链接库
+#### 5. 运行编译
+    
+- ./androidBuilder.sh
+- armeabi-v7a目录下的include和lib就是我们引入Android需要使用的头文件和动态链接库
 
-5. 编译失败问题：
+#### 6. 编译失败问题：
 
 - NDK包含B0宏定义,导致编译失败：
     - libavcodec/aaccoder.c 修改B0为b0
     - libavcodec/hevc_mvs.c 修改B0为b0、修改xB0 yB0为xb0 yb0
     - libavcodec/opus_pvq.c 修改B0为b0
 
-6. [参考博客](https://www.jianshu.com/p/df9401e6fba5?utm_campaign=haruki&utm_content=note&utm_medium=seo_notes&utm_source=recommendation)
+- [参考博客](https://www.jianshu.com/p/df9401e6fba5?utm_campaign=haruki&utm_content=note&utm_medium=seo_notes&utm_source=recommendation)
 
 
 ### 一、Android中使用FFmpeg
